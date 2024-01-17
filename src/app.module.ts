@@ -11,7 +11,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'mongodb',
-        database: 'test_app',
+        database: configService.get('DB_NAME'),
         url: configService.get('DATABASE'),
         autoLoadEntities: true,
         synchronize: true,
