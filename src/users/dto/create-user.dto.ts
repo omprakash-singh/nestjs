@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { ObjectId } from 'mongodb';
 
 export class CreateUserDto {
   @IsNotEmpty()
@@ -16,4 +17,9 @@ export class CreateUserDto {
   @IsString()
   @ApiProperty()
   password: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  profile: ObjectId;
 }
