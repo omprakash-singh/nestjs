@@ -17,6 +17,7 @@ import { ProfileModule } from './profile/profile.module';
         url: configService.get('DATABASE'),
         autoLoadEntities: true,
         synchronize: true,
+        logging: true,
       }),
     }),
     UsersModule,
